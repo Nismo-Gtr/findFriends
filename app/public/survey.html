@@ -9,18 +9,20 @@
   
     <!-- Font Awesome Glyphicons -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
-  
+    <style>
+      @import url('https://fonts.googleapis.com/css?family=Roboto+Mono');
+      </style>
     <!-- Chosen -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.jquery.min.js"></script>
-  
+    <link rel="stylesheet" href="style.css">
   </head>
   
-  <body class="">
+  <body>
   
     <div class="container">
   
-      <h2>Survey Questions</h2>
+      <h2>ANSWER ME!</h2>
       <hr>
   
       <h3><strong>About You</strong></h3>
@@ -33,8 +35,7 @@
       <hr>
   <div class="row">
     <div class="col-md-6">
-      <h3><strong>Question 1</strong></h3>
-      <h4>Micheal Myers</h4>
+      <h3><strong>Micheal Myers</strong></h3>
       <select class="chosen-select" id="q1" style="display: block;">
         <option value=""></option>
         <option value="1">1 (Strongly Disagree)</option>
@@ -45,8 +46,7 @@
       </select>
   </div>
   <div class="col-md-6">
-      <h3><strong>Question 2</strong></h3>
-      <h4>The Tampa Bay Buccaneers are the greatest sports franchise in the history of the earth!</h4>
+      <h3><strong>The Tampa Bay Buccaneers are the greatest sports franchise in the history of the earth!</strong></h3>
       <select class="chosen-select" id="q2" style="display: block;">
         <option value=""></option>
         <option value="1">1 (Strongly Disagree)</option>
@@ -59,8 +59,7 @@
   </div>
   <div class="row">
     <div class="col-md-6">
-      <h3><strong>Question 3</strong></h3>
-      <h4>Joe Rogan</h4>
+      <h3><strong>Joe Rogan</strong></h3>
       <select class="chosen-select" id="q3">
         <option value=""></option>
         <option value="1">1 (Strongly Disagree)</option>
@@ -71,8 +70,7 @@
       </select>
   </div>
   <div class="col-md-6">
-      <h3><strong>Question 4</strong></h3>
-      <h4>Portland, OR</h4>
+      <h3><strong>Portland, OR</strong></h3>
       <select class="chosen-select" id="q4" style="display: block;">
         <option value=""></option>
         <option value="1">1 (Strongly Disagree)</option>
@@ -85,8 +83,7 @@
   </div>
   <div class="row">
     <div class="col-md-6">
-      <h3><strong>Question 5</strong></h3>
-      <h4>Mountain Biking</h4>
+      <h3><strong>Mountain Biking</strong></h3>
       <select class="chosen-select" id="q5" style="display: block;">
         <option value=""></option>
         <option value="1">1 (Strongly Disagree)</option>
@@ -97,8 +94,7 @@
       </select>
   </div>
   <div class="col-md-6">
-      <h3><strong>Question 6</strong></h3>
-      <h4>Progressive Rock</h4>
+      <h3><strong>Progressive Rock</strong></h3>
       <select class="chosen-select" id="q6" style="display: block;">
         <option value=""></option>
         <option value="1">1 (Strongly Disagree)</option>
@@ -111,8 +107,7 @@
   </div>
   <div class="row">
     <div class="col-md-6">
-      <h3><strong>Question 7</strong></h3>
-      <h4>Cats</h4>
+      <h3><strong>Cats</strong></h3>
       <select class="chosen-select" id="q7" style="display: block;">
         <option value=""></option>
         <option value="1">1 (Strongly Disagree)</option>
@@ -123,8 +118,7 @@
       </select>
   </div>
   <div class="col-md-6">
-      <h3><strong>Question 8</strong></h3>
-      <h4>Pirates</h4>
+      <h3><strong>Pirates</strong></h3>
       <select class="chosen-select" id="q8" style="display: block;">
         <option value=""></option>
         <option value="1">1 (Strongly Disagree)</option>
@@ -137,8 +131,7 @@
   </div>
   <div class="row">
     <div class="col-md-6">
-      <h3><strong>Question 9</strong></h3>
-      <h4>Philadelphia</h4>
+      <h3><strong>Philadelphia</strong></h3>
       <select class="chosen-select" id="q9" style="display: block;">
         <option value=""></option>
         <option value="1">1 (Strongly Disagree)</option>
@@ -149,8 +142,7 @@
       </select>
   </div>
   <div class="col-md-6">
-      <h3><strong>Question 10</strong></h3>
-      <h4>Deep Dish Pizza</h4>
+      <h3><strong>Deep Dish Pizza</strong></h3>
       <select class="chosen-select" id="q10" style="display: block;">
         <option value=""></option>
         <option value="1">1 (Strongly Disagree)</option>
@@ -257,15 +249,12 @@
             ]
           };
           
-  
-          // AJAX post the data to the friends API.
+
           $.post("/api/friends", userData, function(data) {
                 console.log(data);
-            // Grab the result from the AJAX post so that the best match's name and photo are displayed.
             $("#match-name").text(data.matchName);
             $("#match-img").attr("src", data.matchImage);
-  
-            // Show the modal with the best match
+
             $("#results-modal").modal("toggle");
   
           });

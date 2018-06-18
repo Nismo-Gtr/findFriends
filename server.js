@@ -8,6 +8,8 @@ var PORT = 3000;
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+app.use(express.static(__dirname + "/app/public"));
+console.log(__dirname);
 // ================================================================================
 // ROUTER
 // The below points our server to a series of "route" files.

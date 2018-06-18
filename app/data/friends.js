@@ -1,7 +1,7 @@
 var friends = [
     {
     name: "Nosferatu",
-    photo: './nosferatu.jpg',
+    photo: 'nosferatu.jpg',
     scores:[
         1,
         2,

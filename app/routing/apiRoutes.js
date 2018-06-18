@@ -32,49 +32,31 @@ module.exports = function (app) {
   // Then the server saves the data to the tableData array)
   // ---------------------------------------------------------------------------
 
-  app.post('/api/friends', function (req, res) {
+  app.post("/api/friends", function (req, res) {
 
-    var userInput = req.body;
+    var userSurvey = req.body;
 
-    var userResponses = userInput.scores;
+    var userResults = userSurvey.scores;
 
-    var matchName = '';
-    var matchImage = '';
-    var totalDifference = 10000;
+    var matchName = "";
+    var matchPhoto = "";
+    var totalMargin = 1000;
 
 
     for (var i = 0; i < friends.length; i++) {
-
-      var diff = 0;
-      for (var j = 0; j < userResponses.length; j++) {
-        diff += Math.abs(friends[i].scores[j] - userResponses[j]);
+      var spread = 0;
+      for (var a = 0; a < userResults.length; a++) {
+        spread += Math.abs(friends[i].scores[a] - userResults[a]);
       }
 
-      if (diff < totalDifference) {
-
-        totalDifference = diff;
+      if (spread < totalMargin) {
+        totalMargin = spread;
         matchName = friends[i].name;
-        matchImage = friends[i].photo;
+        matchPhoto = friends[i].photo;
 
       }
     }
-
-    // Add new user
-
-    res.json({ status: 'OK', matchName: matchName, matchImage: matchImage });
+    res.json({matchName, matchPhoto});
   });
 
-
-
-  // ---------------------------------------------------------------------------
-  // I added this below code so you could clear out the table while working with the functionality.
-  // Don"t worry about it!
-
-  app.post("/api/clear", function () {
-    // Empty out the arrays of data
-    tableData = [];
-    waitListData = [];
-
-    console.log(tableData);
-  });
 };

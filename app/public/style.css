@@ -1,0 +1,37 @@
+* {
+    font-family: 'Roboto Mono', 'monospace';
+}
+
+body,
+.container {
+    padding-top: 100px;
+    color: white;
+    text-shadow: -1px 1px black;
+    background-image: url("./railway-tracks-3455169_1920.jpg");
+    background-color: skyblue;
+}
+
+.container {
+background: rgba(0,0,0, .2);
+border-radius: 20px;
+}
+
+h1 {
+    overflow: hidden; 
+    white-space: nowrap; 
+    margin: 0 auto; 
+    letter-spacing: .15em; 
+    animation: 
+      typing 3.5s steps(40, end)
+  }
+  
+  /* The typing effect */
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+
+
+.modal-content {
+      color: black;
+  }
